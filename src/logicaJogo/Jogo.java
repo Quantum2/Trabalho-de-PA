@@ -11,5 +11,8 @@ package logicaJogo;
  * @author a21230528
  */
 public class Jogo {
+    Contexto con = new Contexto();
+    Estado estadoActual = new comecarJogo();
+    
     
 }

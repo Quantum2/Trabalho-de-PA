@@ -10,6 +10,21 @@ package logicaJogo;
  *
  * @author a21230528
  */
-public class Contexto {
+public class Contexto implements Estado{
+
+    private Estado jogoEstado;
+    
+    public void setState(Estado estado){
+        this.jogoEstado=estado;
+    }
+    
+    public Estado getState(){
+        return this.jogoEstado;
+    }
+    
+    @Override
+    public void doAction() {
+        this.jogoEstado.doAction();
+    }
     
 }
