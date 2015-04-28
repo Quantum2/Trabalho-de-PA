@@ -6,17 +6,26 @@
 
 package logicaJogo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author a21230528
  */
 public class comecarJogo implements Estado{
-
+    public static final int TAMANHO_MAPA = 30;
+    
     @Override
     public void doAction() {
-        Carta campo[][] = new Carta[30][30];
+        List<Carta> campo = new ArrayList<>();
         
-        
+        gerarCampo(campo);
     }
     
+    void gerarCampo(List<Carta> c){
+        for(int i=0;i<TAMANHO_MAPA;i++){
+            
+        }
+    }
 }
