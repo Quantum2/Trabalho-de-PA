@@ -9,7 +9,7 @@ package iu.texto;
  *
  * @author Rafael
  */
-public class utils {
+public class UtilsIUTexto {
     public final static void clearConsole() {
         try {
             final String os = System.getProperty("os.name");

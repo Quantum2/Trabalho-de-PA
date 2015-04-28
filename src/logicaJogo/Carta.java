@@ -11,17 +11,28 @@ package logicaJogo;
  * @author a21230528
  */
 public class Carta {
-   String tipo;
+
+    String tipo;
 }
 
-class CartaNula extends Carta{
-    CartaNula(){
-        
+class CartaNula extends Carta {
+
+    CartaNula() {
+
     }
 }
 
-class CartaPlaneta extends Carta{   
-    CartaPlaneta(){
+class CartaPlaneta extends Carta {
+
+    CartaPlaneta() {
         tipo = "Planeta";
     }
+}
+
+class CartaWormhole extends Carta {
+
+    public CartaWormhole() {
+        tipo = "Wormhole";
+    }
+
 }

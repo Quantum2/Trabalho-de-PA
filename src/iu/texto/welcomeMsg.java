@@ -5,7 +5,6 @@
  */
 package iu.texto;
 import java.util.Scanner;
-import java.lang.String;
 
 /**
  *
@@ -13,13 +12,13 @@ import java.lang.String;
  */
 public class welcomeMsg {
     public static void imprimirTextoInicial(){
-        utils.clearConsole();
+        UtilsIUTexto.clearConsole();
         
         System.out.println("-------------------");
         System.out.println(" Milky Way Express");
         System.out.println("-------------------");
         
-        System.out.println("\n1 - Opção não implementada");
+        System.out.println("\n1 - Iniciar jogo");
         System.out.println("\n2 - Opção não implementada");
         System.out.println("\n3 - Opção não implementada");
         System.out.println("\n4 - Sair\n");
