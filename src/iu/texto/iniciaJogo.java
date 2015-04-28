@@ -16,8 +16,11 @@ public class iniciaJogo {
     public static void iuEngine(){
         Contexto cont = new Contexto();
         Estado comecarJogo = new comecarJogo();
+        Estado esperaEntrada = new esperaEntrada();
         
         cont.setState(comecarJogo);
+        cont.doAction();
+        cont.setState(esperaEntrada);
         cont.doAction();
     }
 }
