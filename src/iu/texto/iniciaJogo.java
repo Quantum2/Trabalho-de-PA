@@ -19,6 +19,5 @@ public class iniciaJogo {
         
         cont.setState(comecarJogo);
         cont.doAction();
-        Estado state = cont.getState();
     }
 }

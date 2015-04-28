@@ -26,6 +26,9 @@ public class Main {
             case 1:
                 iuEngine();
                 break;
+            case 4:
+                System.exit(0);
+                break;
             default:
                 break;
         }
