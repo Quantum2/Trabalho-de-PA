@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package iu.texto;
-import logicaJogo.*;
+import static iu.texto.iniciaJogo.iuEngine;
         
 /**
  *
@@ -17,9 +17,18 @@ public class Main {
      */
     public static void main(String[] args) {
         int opcao;
-        
+
+        UtilsIUTexto.clearConsole();
         welcomeMsg.imprimirTextoInicial();
         opcao = welcomeMsg.getOpcao();
+
+        switch (opcao) {
+            case 1:
+                iuEngine();
+                break;
+            default:
+                break;
+        }
     }
     
 }
