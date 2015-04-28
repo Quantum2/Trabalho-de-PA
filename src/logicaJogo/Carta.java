@@ -10,13 +10,12 @@ package logicaJogo;
  *
  * @author a21230528
  */
-public class comecarJogo implements Estado{
+public class Carta {
+   
+}
 
-    @Override
-    public void doAction() {
-        Carta campo[][] = new Carta[30][30];
-        
+class CartaNula extends Carta{
+    CartaNula(){
         
     }
-    
 }
