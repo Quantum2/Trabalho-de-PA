@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package logicaJogo;
+package logicaJogo.Recursos;
 
 /**
  *
- * @author a21230528
+ * @author Rafael
  */
-public interface Estado{
-    Jogo jogo = new Jogo();
+public class Amarelo extends Recurso{
     
-    public void doAction();
 }

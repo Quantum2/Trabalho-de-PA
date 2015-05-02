@@ -3,20 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logicaJogo;
+
+package logicaJogo.Estados;
+
+import logicaJogo.Jogo;
 
 /**
- *
- * @author Rafael
+ * @author a21230528
  */
-public class Jogo {
-    Mapa map;
+public interface Estado{
+    Jogo jogo = new Jogo();
     
-    public Jogo(){
-        map = new Mapa();
-    }
-    
-    public void imprimirMapa(){
-        map.imprimirMapa();
-    }
+    public void doAction();
 }

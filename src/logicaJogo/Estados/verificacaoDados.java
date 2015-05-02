@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package logicaJogo;
+package logicaJogo.Estados;
 
 /**
  *
  * @author a21230528
  */
-public class terminarJogo implements Estado{
+public class verificacaoDados implements Estado{
 
     @Override
     public void doAction() {

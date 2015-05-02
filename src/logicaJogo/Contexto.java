@@ -6,6 +6,8 @@
 
 package logicaJogo;
 
+import logicaJogo.Estados.Estado;
+
 /**
  *
  * @author a21230528
@@ -13,7 +15,6 @@ package logicaJogo;
 public class Contexto implements Estado {
 
     private Estado jogoEstado;
-    Mapa map = new Mapa();
 
     public void setState(Estado estado) {
         this.jogoEstado = estado;

@@ -6,6 +6,9 @@
 
 package iu.texto;
 
+import logicaJogo.Estados.Estado;
+import logicaJogo.Estados.esperaEntrada;
+import logicaJogo.Estados.comecarJogo;
 import logicaJogo.*;
 
 /**
@@ -20,6 +23,7 @@ public class iniciaJogo {
     public static void iuEngine(){
         Contexto con = new Contexto();
         Estado comecarJogo = new comecarJogo();
+        Estado esperaEntrada = new esperaEntrada();
         
         con.setState(comecarJogo);
         con.doAction();

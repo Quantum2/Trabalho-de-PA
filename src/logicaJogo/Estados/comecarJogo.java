@@ -4,17 +4,19 @@
  * and open the template in the editor.
  */
 
-package logicaJogo;
+package logicaJogo.Estados;
 
 /**
  *
  * @author a21230528
  */
-public class verificacaoDados implements Estado{
+public class comecarJogo implements Estado {
 
+    /**
+     * Do action
+     */
     @Override
     public void doAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        jogo.imprimirMapa();
     }
-    
 }

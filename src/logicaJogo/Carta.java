@@ -29,6 +29,13 @@ class CartaPlaneta extends Carta {
     }
 }
 
+class CartaPlanetaPirata extends Carta {
+    
+    CartaPlanetaPirata() {
+        tipo = "p";
+    }
+}
+
 class CartaWormhole extends Carta {
 
     public CartaWormhole() {
