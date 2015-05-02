@@ -11,8 +11,14 @@ package logicaJogo;
  * @author a21230528
  */
 public class Jogo {
-    Contexto con = new Contexto();
+    public Contexto con;
     Estado estadoActual = new comecarJogo();
+    Mapa map;
+
+    public Jogo() {
+        this.con = new Contexto();
+        map = new Mapa();
+    }
     
     
 }

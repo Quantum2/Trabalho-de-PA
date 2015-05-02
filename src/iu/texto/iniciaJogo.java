@@ -14,13 +14,10 @@ import logicaJogo.*;
  */
 public class iniciaJogo {
     public static void iuEngine(){
-        Contexto cont = new Contexto();
+        Jogo jogo = new Jogo();
         Estado comecarJogo = new comecarJogo();
-        Estado esperaEntrada = new esperaEntrada();
         
-        cont.setState(comecarJogo);
-        cont.doAction();
-        cont.setState(esperaEntrada);
-        cont.doAction();
+        jogo.con.setState(comecarJogo);
+        jogo.con.doAction();
     }
 }

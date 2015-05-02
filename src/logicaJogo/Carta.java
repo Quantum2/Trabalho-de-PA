@@ -18,7 +18,7 @@ public class Carta {
 class CartaNula extends Carta {
 
     CartaNula() {
-
+        tipo="Nula";
     }
 }
 
