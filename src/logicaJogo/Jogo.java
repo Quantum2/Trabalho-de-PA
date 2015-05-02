@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package logicaJogo;
 
 /**
  *
- * @author a21230528
+ * @author Rafael
  */
-public interface Estado{
-    Jogo jogo = new Jogo();
+public class Jogo {
+    Mapa mapa;
     
-    public void doAction();
+    Jogo(){
+        mapa = new Mapa();
+    }
 }

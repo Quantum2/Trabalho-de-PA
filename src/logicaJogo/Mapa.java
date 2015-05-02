@@ -5,44 +5,33 @@
  */
 package logicaJogo;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Rafael
  */
 public class Mapa {
-    ArrayList<Carta> elementos_x;
-    ArrayList<Carta> elementos_y;
-    
-    Mapa(){
-        elementos_x = new ArrayList<>();
-        elementos_y = new ArrayList<>();
-        
-        Carta c;
-        c = new CartaNula();
-
-        for (int i = 0; i < 7; i++) {
-            elementos_x.add(c);
-        }
-        
-        for (int i=0;i<9;i++){
-            elementos_y.add(c);
-        }
-        
+    Carta map[][] = new Carta[7][9];
+  
+    Mapa() {
         preencherAcaso();
     }
 
     private void preencherAcaso() {
+        Carta c;
+        c = new CartaNula();
         
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 9; j++) {
+                map[i][j] = c;
+            }
+        }
     }
 
     private void imprimirMapa() {
-        for(Carta c: elementos_x){
-            System.out.println(c.tipo);
-        }
-        for(Carta j: elementos_y){
-            System.out.println(j.tipo);
+        for(int i=0;i<7;i++){
+            for(int j=0;j<9;j++){
+                System.out.println(map[i][j].tipo);
+            }
         }
     }
 }
