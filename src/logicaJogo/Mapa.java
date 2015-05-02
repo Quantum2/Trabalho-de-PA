@@ -36,4 +36,13 @@ public class Mapa {
     private void preencherAcaso() {
         
     }
+
+    private void imprimirMapa() {
+        for(Carta c: elementos_x){
+            System.out.println(c.tipo);
+        }
+        for(Carta j: elementos_y){
+            System.out.println(j.tipo);
+        }
+    }
 }

@@ -13,11 +13,15 @@ import logicaJogo.*;
  * @author a21230528
  */
 public class iniciaJogo {
+
+    /**
+     *
+     */
     public static void iuEngine(){
-        Jogo jogo = new Jogo();
+        Contexto con = new Contexto();
         Estado comecarJogo = new comecarJogo();
         
-        jogo.con.setState(comecarJogo);
-        jogo.con.doAction();
+        con.setState(comecarJogo);
+        con.doAction();
     }
 }
