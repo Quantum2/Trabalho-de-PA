@@ -17,6 +17,8 @@ public class comecarJogo implements Estado {
      */
     @Override
     public void doAction() {
+        jogo.inicializarMem();
         jogo.imprimirMapa();
+        jogo.setMoedas(30);
     }
 }

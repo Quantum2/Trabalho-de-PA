@@ -1,0 +1,6 @@
+logicaJogo.Carta
+logicaJogo.CartaWormhole
+logicaJogo.CartaEspaçoVazio
+logicaJogo.CartaPlaneta
+logicaJogo.CartaPlanetaPirata
+logicaJogo.CartaNula
