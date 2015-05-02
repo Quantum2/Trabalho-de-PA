@@ -10,9 +10,9 @@ package logicaJogo;
  * @author Rafael
  */
 public class Jogo {
-    Mapa mapa;
+    Mapa map;
     
     Jogo(){
-        mapa = new Mapa();
+        map = new Mapa();
     }
 }

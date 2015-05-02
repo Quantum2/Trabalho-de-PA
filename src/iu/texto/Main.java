@@ -24,6 +24,7 @@ public class Main {
 
         switch (opcao) {
             case 1:
+                UtilsIUTexto.clearConsole();
                 iuEngine();
                 break;
             case 4:

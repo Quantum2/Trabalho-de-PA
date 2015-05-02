@@ -18,21 +18,21 @@ public class Carta {
 class CartaNula extends Carta {
 
     CartaNula() {
-        tipo="Nula";
+        tipo=" ";
     }
 }
 
 class CartaPlaneta extends Carta {
 
     CartaPlaneta() {
-        tipo = "Planeta";
+        tipo = "P";
     }
 }
 
 class CartaWormhole extends Carta {
 
     public CartaWormhole() {
-        tipo = "Wormhole";
+        tipo = "W";
     }
 
 }

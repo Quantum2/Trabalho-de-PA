@@ -27,5 +27,4 @@ public class Contexto implements Estado {
     public void doAction() {
         this.jogoEstado.doAction();
     }
-
 }

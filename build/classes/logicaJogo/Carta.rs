@@ -1,4 +1,0 @@
-logicaJogo.Carta
-logicaJogo.CartaWormhole
-logicaJogo.CartaPlaneta
-logicaJogo.CartaNula
