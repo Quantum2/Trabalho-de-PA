@@ -18,8 +18,16 @@ public class Carta {
 class CartaNula extends Carta {
 
     CartaNula() {
-        tipo=" ";
+        tipo = " ";
     }
+}
+
+class CartaEspaçoVazio extends Carta {
+
+    public CartaEspaçoVazio() {
+        tipo = "V";
+    }
+
 }
 
 class CartaPlaneta extends Carta {
@@ -32,7 +40,7 @@ class CartaPlaneta extends Carta {
 class CartaPlanetaPirata extends Carta {
     
     CartaPlanetaPirata() {
-        tipo = "p";
+        tipo = "X";
     }
 }
 
