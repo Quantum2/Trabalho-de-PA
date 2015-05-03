@@ -27,5 +27,7 @@ public class iniciaJogo {
         
         con.setState(comecarJogo);
         con.doAction();
+        con.setState(esperaEntrada);
+        con.doAction();
     }
 }
