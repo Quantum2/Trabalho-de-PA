@@ -19,6 +19,6 @@ public class comecarJogo implements Estado {
     public void doAction() {
         jogo.inicializarMem();
         jogo.imprimirMapa();
-        jogo.setMoedas(30);
+        jogo.setMoedas(10);
     }
 }

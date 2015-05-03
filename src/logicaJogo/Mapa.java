@@ -17,7 +17,7 @@ public class Mapa {
     String coords[];
     
     public static final int num_wormholes = 2;
-    public static final int num_vazios = 14;
+    public static final int num_vazios = 12;
     public static final int num_planetas = 6;
     public static final int num_planetas_piratas = 3;
   
@@ -145,7 +145,7 @@ public class Mapa {
     }
 
     private void definirCoords() {
-        coords = new String[]{"0,8","1,3","1,8","2,2","2,3","2,4","2,6","2,7","2,8","3,1","3,2","3,3","3,4","3,5","3,6","3,7","4,0","4,1","4,2","4,4","4,5","4,6","5,0","5,5","6,0"
+        coords = new String[]{"1,3","1,8","2,2","2,3","2,4","2,6","2,7","2,8","3,1","3,2","3,3","3,4","3,5","3,6","3,7","4,0","4,1","4,2","4,4","4,5","4,6","5,0","5,5"
         };
     }
 }

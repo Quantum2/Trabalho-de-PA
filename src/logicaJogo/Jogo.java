@@ -13,6 +13,8 @@ public class Jogo {
 
     Mapa map;
     int moedas;
+    Nave jogador;
+    Dado dado;
 
     public int getMoedas() {
         return moedas;
@@ -32,5 +34,7 @@ public class Jogo {
 
     public void inicializarMem() {
         map = new Mapa();
+        jogador = new Nave();
+        dado = new Dado();
     }
 }
