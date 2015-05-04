@@ -15,6 +15,7 @@ public class Jogo {
     int moedas;
     Nave jogador;
     Dado dado;
+    public String modo;
 
     public int getMoedas() {
         return moedas;

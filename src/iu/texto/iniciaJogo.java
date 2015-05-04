@@ -10,6 +10,7 @@ import logicaJogo.Estados.Estado;
 import logicaJogo.Estados.esperaEntrada;
 import logicaJogo.Estados.comecarJogo;
 import logicaJogo.*;
+import logicaJogo.Estados.processaDados;
 
 /**
  *
@@ -24,10 +25,20 @@ public class iniciaJogo {
         Contexto con = new Contexto();
         Estado comecarJogo = new comecarJogo();
         Estado esperaEntrada = new esperaEntrada();
+        Estado processaDados = new processaDados();
+        boolean acabar = false;
         
-        con.setState(comecarJogo);
-        con.doAction();
-        con.setState(esperaEntrada);
-        con.doAction();
+        Estado.jogo.modo="texto";
+        
+        do{
+            con.setState(comecarJogo);
+            con.doAction();
+
+            con.setState(esperaEntrada);
+            con.doAction();
+            
+            con.setState(processaDados);
+            con.doAction();
+        } while (acabar != true);
     }
 }

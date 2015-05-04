@@ -14,7 +14,11 @@ public class esperaEntrada implements Estado{
 
     @Override
     public void doAction() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+    }
+    
+    void entradaDados(){
+        
     }
     
 }
