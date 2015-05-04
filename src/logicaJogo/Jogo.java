@@ -17,6 +17,15 @@ public class Jogo {
     Dado dado;
     StringBuffer comandoSeguinte;
     public int validezDados;
+    
+    /**
+     *
+     * @param x
+     * @param y
+     */
+    public void mudarPosicaoNave(int x, int y){
+        
+    }
 
     public StringBuffer getComandoSeguinte() {
         return comandoSeguinte;
