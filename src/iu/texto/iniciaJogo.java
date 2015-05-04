@@ -35,11 +35,13 @@ public class iniciaJogo {
 
             con.setState(esperaEntrada);
             
-            Scanner entrada = new Scanner(System.in);
-            String s = entrada.nextLine();
-            Estado.jogo.setComandoSeguinte(new StringBuffer(s));
-            
-            con.doAction();
+            do {
+                Scanner entrada = new Scanner(System.in);
+                String s = entrada.nextLine();
+                Estado.jogo.setComandoSeguinte(new StringBuffer(s));
+
+                con.doAction();
+            } while (Estado.jogo.validezDados != 0);
             
             con.setState(processaDados);
             con.doAction();

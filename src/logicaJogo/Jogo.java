@@ -16,6 +16,7 @@ public class Jogo {
     Nave jogador;
     Dado dado;
     StringBuffer comandoSeguinte;
+    public int validezDados;
 
     public StringBuffer getComandoSeguinte() {
         return comandoSeguinte;
@@ -45,5 +46,17 @@ public class Jogo {
         map = new Mapa();
         jogador = new Nave();
         dado = new Dado();
+    }
+
+    public int verificarValidadeComando() {
+        if(comandoSeguinte.toString().equalsIgnoreCase("cima"))
+            return 0;
+        if(comandoSeguinte.toString().equalsIgnoreCase("baixo"))
+            return 0;
+        if(comandoSeguinte.toString().equalsIgnoreCase("direita"))
+            return 0;
+        if(comandoSeguinte.toString().equalsIgnoreCase("esquerda"))
+            return 0;
+        return 1;
     }
 }

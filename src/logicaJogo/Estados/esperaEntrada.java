@@ -14,6 +14,8 @@ public class esperaEntrada implements Estado{
 
     @Override
     public void doAction() {
-        
+        int retValue;
+        retValue = jogo.verificarValidadeComando();
+        jogo.validezDados=retValue;
     }    
 }
