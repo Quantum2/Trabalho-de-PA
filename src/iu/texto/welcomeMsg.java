@@ -19,7 +19,7 @@ public class welcomeMsg {
         System.out.println("-------------------");
         
         System.out.println("\n1 - Iniciar jogo");
-        System.out.println("\n2 - Opção não implementada");
+        System.out.println("\n2 - Carregar jogo");
         System.out.println("\n3 - Opção não implementada");
         System.out.println("\n4 - Sair\n");
     }

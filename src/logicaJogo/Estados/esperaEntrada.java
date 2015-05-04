@@ -15,10 +15,5 @@ public class esperaEntrada implements Estado{
     @Override
     public void doAction() {
         
-    }
-    
-    void entradaDados(){
-        
-    }
-    
+    }    
 }

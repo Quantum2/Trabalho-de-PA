@@ -15,7 +15,15 @@ public class Jogo {
     int moedas;
     Nave jogador;
     Dado dado;
-    public String modo;
+    StringBuffer comandoSeguinte;
+
+    public StringBuffer getComandoSeguinte() {
+        return comandoSeguinte;
+    }
+
+    public void setComandoSeguinte(StringBuffer comandoSeguinte) {
+        this.comandoSeguinte = comandoSeguinte;
+    }
 
     public int getMoedas() {
         return moedas;

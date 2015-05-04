@@ -6,6 +6,7 @@
 
 package iu.texto;
 
+import java.util.Scanner;
 import logicaJogo.Estados.Estado;
 import logicaJogo.Estados.esperaEntrada;
 import logicaJogo.Estados.comecarJogo;
@@ -28,13 +29,16 @@ public class iniciaJogo {
         Estado processaDados = new processaDados();
         boolean acabar = false;
         
-        Estado.jogo.modo="texto";
-        
         do{
             con.setState(comecarJogo);
             con.doAction();
 
             con.setState(esperaEntrada);
+            
+            Scanner entrada = new Scanner(System.in);
+            String s = entrada.nextLine();
+            Estado.jogo.setComandoSeguinte(new StringBuffer(s));
+            
             con.doAction();
             
             con.setState(processaDados);
