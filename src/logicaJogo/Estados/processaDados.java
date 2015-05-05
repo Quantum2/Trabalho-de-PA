@@ -28,6 +28,12 @@ public class processaDados implements Estado{
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("2")) {
             x=-1;
         }
+        if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("5")) {
+            jogo.gravarJogo();
+        }
+        if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("6")) {
+            System.exit(0);
+        }
             
         jogo.mudarPosicaoNave(x, y);
         jogo.imprimirMapa();

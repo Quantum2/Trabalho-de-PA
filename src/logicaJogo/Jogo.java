@@ -69,10 +69,18 @@ public class Jogo implements Serializable{
             return 0;
         if(comandoSeguinte.toString().equalsIgnoreCase("4"))
             return 0;
+        if(comandoSeguinte.toString().equalsIgnoreCase("5"))
+            return 0;
+        if(comandoSeguinte.toString().equalsIgnoreCase("6"))
+            return 0;
         return 1;
     }
 
     public void mostrarMenu() {
-        System.out.println("\n(1) - Cima\n(2) - Baixo\n(3) - Esquerda\n(4) - Direita");
+        System.out.println("\n(1) - Cima\n(2) - Baixo\n(3) - Direita\n(4) - Esquerda\n(5) - Gravar jogo\n(6) - Sair");
+    }
+
+    public void gravarJogo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

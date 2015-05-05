@@ -134,9 +134,12 @@ public class Mapa {
                 else {
                     System.out.print(" ");
                 }
-                
+               
                 System.out.print(map[i][j].tipo);
                 if (nave.getPos_x() == i && nave.getPos_y() == j) {
+                    if (" ".equals(map[i][j].tipo)) {
+                        nave.retPosAnterior();
+                    }
                     System.out.print("*");
                 }
                 
