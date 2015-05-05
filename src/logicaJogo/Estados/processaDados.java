@@ -14,8 +14,23 @@ public class processaDados implements Estado{
 
     @Override
     public void doAction() {
-        int x, y;
+        int x=0, y=0;
+        
+        if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("1")) {
+            x=1;
+        }
+        if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("3")) {
+            y=1;
+        }
+        if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("4")) {
+            y=-1;
+        }
+        if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("2")) {
+            x=-1;
+        }
+            
         jogo.mudarPosicaoNave(x, y);
+        jogo.imprimirMapa();
     }
     
 }

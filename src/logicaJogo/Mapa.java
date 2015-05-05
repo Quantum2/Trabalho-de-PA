@@ -125,20 +125,27 @@ public class Mapa {
         }
     }
 
-    public void imprimirMapa() {
+    public void imprimirMapa(Nave nave) {
         for (int i = 0; i < 7; i++) {
             for (int j = 0; j < 9; j++) {
-                if(map[i][j].tipo!=" ")
+                if(!" ".equals(map[i][j].tipo)) {
                     System.out.print("|");
-                else
+                }
+                else {
                     System.out.print(" ");
+                }
                 
                 System.out.print(map[i][j].tipo);
+                if (nave.getPos_x() == i && nave.getPos_y() == j) {
+                    System.out.print("*");
+                }
                 
-                if(map[i][j].tipo!=" ")
+                if(!" ".equals(map[i][j].tipo)) {
                     System.out.print("|");
-                else
+                }
+                else {
                     System.out.print(" ");
+                }
             }
             System.out.println();
         }

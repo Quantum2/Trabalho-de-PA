@@ -5,11 +5,13 @@
  */
 package logicaJogo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Rafael
  */
-public class Jogo {
+public class Jogo implements Serializable{
 
     Mapa map;
     int moedas;
@@ -24,7 +26,8 @@ public class Jogo {
      * @param y
      */
     public void mudarPosicaoNave(int x, int y){
-        
+        jogador.setPos_x(jogador.pos_x + x);
+        jogador.setPos_y(jogador.pos_y + y);
     }
 
     public StringBuffer getComandoSeguinte() {
@@ -48,7 +51,7 @@ public class Jogo {
     }
 
     public void imprimirMapa() {
-        map.imprimirMapa();
+        map.imprimirMapa(jogador);
     }
 
     public void inicializarMem() {
@@ -58,14 +61,18 @@ public class Jogo {
     }
 
     public int verificarValidadeComando() {
-        if(comandoSeguinte.toString().equalsIgnoreCase("cima"))
+        if(comandoSeguinte.toString().equalsIgnoreCase("1"))
             return 0;
-        if(comandoSeguinte.toString().equalsIgnoreCase("baixo"))
+        if(comandoSeguinte.toString().equalsIgnoreCase("2"))
             return 0;
-        if(comandoSeguinte.toString().equalsIgnoreCase("direita"))
+        if(comandoSeguinte.toString().equalsIgnoreCase("3"))
             return 0;
-        if(comandoSeguinte.toString().equalsIgnoreCase("esquerda"))
+        if(comandoSeguinte.toString().equalsIgnoreCase("4"))
             return 0;
         return 1;
+    }
+
+    public void mostrarMenu() {
+        System.out.println("\n(1) - Cima\n(2) - Baixo\n(3) - Esquerda\n(4) - Direita");
     }
 }

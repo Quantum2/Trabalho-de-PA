@@ -18,7 +18,7 @@ public class Nave {
     }
 
     public int getPos_x() {
-        return pos_x;
+        return 6 - pos_x;
     }
 
     public void setPos_x(int pos_x) {

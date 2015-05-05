@@ -7,10 +7,10 @@
 package iu.texto;
 
 import java.util.Scanner;
-import logicaJogo.Estados.Estado;
-import logicaJogo.Estados.esperaEntrada;
-import logicaJogo.Estados.comecarJogo;
 import logicaJogo.*;
+import logicaJogo.Estados.Estado;
+import logicaJogo.Estados.comecarJogo;
+import logicaJogo.Estados.esperaEntrada;
 import logicaJogo.Estados.processaDados;
 
 /**
@@ -28,20 +28,23 @@ public class iniciaJogo {
         Estado esperaEntrada = new esperaEntrada();
         Estado processaDados = new processaDados();
         boolean acabar = false;
+
+        con.setState(comecarJogo);
+        con.doAction();
         
         do{
-            con.setState(comecarJogo);
-            con.doAction();
-
             con.setState(esperaEntrada);
             
             do {
+                Estado.jogo.mostrarMenu();
                 Scanner entrada = new Scanner(System.in);
-                String s = entrada.nextLine();
-                Estado.jogo.setComandoSeguinte(new StringBuffer(s));
-
+                int s = entrada.nextInt();
+                Estado.jogo.setComandoSeguinte(new StringBuffer(new Integer(s).toString()));
+                
                 con.doAction();
             } while (Estado.jogo.validezDados != 0);
+            
+            UtilsIUTexto.clearConsole();
             
             con.setState(processaDados);
             con.doAction();

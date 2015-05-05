@@ -10,17 +10,21 @@ package iu.texto;
  * @author Rafael
  */
 public class UtilsIUTexto {
-    public final static void clearConsole() {
+    /**
+     *
+     */
+    public static void clearConsole() {
         try {
             final String os = System.getProperty("os.name");
 
             if (os.contains("Windows")) {
-                Runtime.getRuntime().exec("cls");
+                String[] cls = new String[] {"cmd.exe", "/c", "cls"};
+                Runtime.getRuntime().exec(cls);
             } else {
                 Runtime.getRuntime().exec("clear");
             }
         } catch (final Exception e) {
-            //  Handle any exceptions.
+            System.out.println(e.toString());
         }
     }
 }
