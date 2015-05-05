@@ -18,8 +18,9 @@ public class UtilsIUTexto {
             final String os = System.getProperty("os.name");
 
             if (os.contains("Windows")) {
-                String[] cls = new String[] {"cmd.exe", "/c", "cls"};
-                Runtime.getRuntime().exec(cls);
+                for(int i=0;i<100;i++) {
+                    System.out.println();
+                }
             } else {
                 Runtime.getRuntime().exec("clear");
             }
