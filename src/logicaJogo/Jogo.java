@@ -6,6 +6,7 @@
 package logicaJogo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,7 +19,10 @@ public class Jogo implements Serializable{
     Nave jogador;
     Dado dado;
     StringBuffer comandoSeguinte;
+    ArrayList<String> stringSaida;
+    ArrayList<Carta> cartasExploradas;
     public int validezDados;
+    public int imprimirCheck = 0;
     
     /**
      *
@@ -58,6 +62,8 @@ public class Jogo implements Serializable{
         map = new Mapa();
         jogador = new Nave();
         dado = new Dado();
+        cartasExploradas = new ArrayList<>();
+        stringSaida = new ArrayList<>();
     }
 
     public int verificarValidadeComando() {
@@ -79,6 +85,8 @@ public class Jogo implements Serializable{
     }
 
     public void mostrarMenu() {
+        stringSaida.add("\n(1) - Cima\n(2) - Baixo\n(3) - Direita\n(4) - Esquerda\n(5) - Informação da carta\n(6) - Gravar jogo\n(7) - Sair");
+        imprimirCheck = 1;
         System.out.println("\n(1) - Cima\n(2) - Baixo\n(3) - Direita\n(4) - Esquerda\n(5) - Informação da carta\n(6) - Gravar jogo\n(7) - Sair");
     }
 
