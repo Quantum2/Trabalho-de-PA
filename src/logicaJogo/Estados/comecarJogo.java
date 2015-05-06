@@ -11,14 +11,17 @@ package logicaJogo.Estados;
  * @author a21230528
  */
 public class comecarJogo implements Estado {
-
+    
+    public static final int num_moedas = 30;
+    
     /**
      * Do action
      */
     @Override
     public void doAction() {
         jogo.inicializarMem();
-        jogo.setMoedas(10);
+        jogo.setMoedas(num_moedas);
+        jogo.imprimirInformacao();
         jogo.imprimirMapa();
     }
 }
