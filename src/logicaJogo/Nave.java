@@ -46,7 +46,7 @@ public class Nave {
         }
     }
 
-    void retPosAnterior() {
+    public void retPosAnterior() {
         this.pos_x = pos_x_ant;
         this.pos_y = pos_y_ant;
     }

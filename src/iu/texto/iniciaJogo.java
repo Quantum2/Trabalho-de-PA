@@ -28,6 +28,9 @@ public class iniciaJogo {
         Estado esperaEntrada = new esperaEntrada();
         Estado processaDados = new processaDados();
         boolean acabar = false;
+        
+        io t1 = new io("Thread 1");
+        t1.start();
 
         con.setState(comecarJogo);
         con.doAction();

@@ -25,10 +25,12 @@ public class Main {
         switch (opcao) {
             case 1:
                 iuEngine();
+            case 2:
+                break;
+            case 3:
                 break;
             case 4:
                 System.exit(0);
-                break;
             default:
                 break;
         }

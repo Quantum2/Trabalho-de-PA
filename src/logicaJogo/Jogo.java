@@ -19,10 +19,19 @@ public class Jogo implements Serializable{
     Nave jogador;
     Dado dado;
     StringBuffer comandoSeguinte;
-    ArrayList<String> stringSaida;
+    public ArrayList<String> stringSaida;
     ArrayList<Carta> cartasExploradas;
     public int validezDados;
     public int imprimirCheck = 0;
+    public int imprimirMapaCheck = 0;
+
+    public Mapa getMap() {
+        return map;
+    }
+
+    public Nave getJogador() {
+        return jogador;
+    }
     
     /**
      *
@@ -55,7 +64,7 @@ public class Jogo implements Serializable{
     }
 
     public void imprimirMapa() {
-        map.imprimirMapa(jogador);
+        imprimirMapaCheck = 1;
     }
 
     public void inicializarMem() {
@@ -85,9 +94,8 @@ public class Jogo implements Serializable{
     }
 
     public void mostrarMenu() {
-        stringSaida.add("\n(1) - Cima\n(2) - Baixo\n(3) - Direita\n(4) - Esquerda\n(5) - Informação da carta\n(6) - Gravar jogo\n(7) - Sair");
+        stringSaida.add("\n(1) - Cima\n(2) - Baixo\n(3) - Direita\n(4) - Esquerda\n(5) - Informação da carta\n(6) - Gravar jogo\n(7) - Sair\n");
         imprimirCheck = 1;
-        System.out.println("\n(1) - Cima\n(2) - Baixo\n(3) - Direita\n(4) - Esquerda\n(5) - Informação da carta\n(6) - Gravar jogo\n(7) - Sair");
     }
 
     public void gravarJogo() {
@@ -99,7 +107,8 @@ public class Jogo implements Serializable{
     }
 
     public void imprimirInformacao() {
-        System.out.println("Moedas : " + moedas);
+        stringSaida.add("Moedas : " + moedas);
+        imprimirCheck = 1;
     }
 
     public void infoCarta() {

@@ -6,19 +6,16 @@
 
 package logicaJogo;
 
-import java.util.ArrayList;
-import logicaJogo.Recursos.Amarelo;
-import logicaJogo.Recursos.Azul;
-import logicaJogo.Recursos.Preto;
-import logicaJogo.Recursos.Vermelho;
-
 /**
  *
  * @author a21230528
  */
 public class Carta {
 
-    String tipo;
+    /**
+     *Tipo de carta
+     */
+    public String tipo;
 }
 
 class CartaNula extends Carta {
