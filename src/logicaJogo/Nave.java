@@ -25,7 +25,7 @@ public class Nave {
     }
 
     public void setPos_x(int pos_x) {
-        pos_x_ant = pos_x;
+        pos_x_ant = this.pos_x;
         this.pos_x = pos_x;
 
         if (this.pos_x < 0) {
@@ -38,7 +38,7 @@ public class Nave {
     }
 
     public void setPos_y(int pos_y) {
-        pos_y_ant = pos_y;
+        pos_y_ant = this.pos_y;
         this.pos_y = pos_y;
         
         if (this.pos_y < 0) {
@@ -47,7 +47,7 @@ public class Nave {
     }
 
     void retPosAnterior() {
-        pos_x = pos_x_ant;
-        pos_y = pos_y_ant;
+        this.pos_x = pos_x_ant;
+        this.pos_y = pos_y_ant;
     }
 }

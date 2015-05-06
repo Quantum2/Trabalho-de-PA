@@ -14,6 +14,8 @@ import static logicaJogo.Utils.randInt;
  */
 public class Mapa {
     Carta map[][] = new Carta[7][9];
+    ArrayList<CartaPlaneta> planetas = new ArrayList<>();
+    ArrayList<CartaPlanetaPirata> piratas = new ArrayList<>();
     String coords[];
     
     public static final int num_wormholes = 2;
@@ -23,7 +25,9 @@ public class Mapa {
   
     Mapa() {
         definirCoords();
+        inicializarPlanetasDados();
         preencherAcaso();
+        colocarDados();
     }
 
     private void preencherAcaso() {
@@ -157,5 +161,65 @@ public class Mapa {
     private void definirCoords() {
         coords = new String[]{"1,3","1,8","2,2","2,3","2,4","2,6","2,7","2,8","3,1","3,2","3,3","3,4","3,5","3,6","3,7","4,0","4,1","4,2","4,4","4,5","4,6","5,0","5,5"
         };
+    }
+
+    private void colocarDados() {
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (map[i][j].tipo.equalsIgnoreCase("P")) {
+                    map[i][j] = planetas.get(0);
+                    planetas.remove(0);
+                }
+            }
+        }
+
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (map[i][j].tipo.equalsIgnoreCase("X")) {
+                    map[i][j] = piratas.get(0);
+                    piratas.remove(0);
+                }
+            }
+        }
+    }
+
+    private void inicializarPlanetasDados() {
+        CartaPlaneta temp;
+        CartaPlanetaPirata tempPirata;
+        String nomesPlanetas[] = new String[]{"Gethen", "Kiber", "Reverie", "Tiamat", "Lamarckia", "Arrakis"};
+        String nomesPiratas[] = new String[]{"Whirl", "Striterax", "Asperta"};
+        int recsPlanetasAzuis[] = new int[]{1, 3, 1, 3, 2, 2};
+        int recsPlanetasAmarelos[] = new int[]{3, 1, 2, 2, 3, 1};
+        int recsPlanetasVermelhos[] = new int[]{2, 2, 3, 1, 1, 3};
+        int recsPlanetasPretos[] = new int[]{3, 3, 3, 3, 3, 3};
+        
+        for(int i=0;i<num_planetas;i++){
+            temp = new CartaPlaneta();
+            
+            temp.nome = nomesPlanetas[i];
+            temp.recs_azul = recsPlanetasAzuis[i];
+            temp.recs_amarelo = recsPlanetasAmarelos[i];
+            temp.recs_vermelho = recsPlanetasVermelhos[i];
+            temp.recs_preto = recsPlanetasPretos[i];
+            
+            planetas.add(temp);
+        }
+        
+        for(int i=0;i<num_planetas_piratas;i++){
+            tempPirata = new CartaPlanetaPirata();
+            
+            tempPirata.nome = nomesPiratas[i];
+            switch (i) {
+                case 0:
+                    tempPirata.recs_amarelo = 3;
+                case 1:
+                    tempPirata.recs_vermelho = 3;
+                case 2:
+                    tempPirata.recs_azul = 3;
+                default:
+                    break;
+            }
+            piratas.add(tempPirata);
+        }
     }
 }

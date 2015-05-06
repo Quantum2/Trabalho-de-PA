@@ -39,21 +39,17 @@ class CartaEspaçoVazio extends Carta {
 class CartaPlaneta extends Carta {
 
     String nome;
-    ArrayList<Azul> recs_azul;
-    ArrayList<Amarelo> recs_amarelo;
-    ArrayList<Vermelho> recs_vermelho;
-    ArrayList<Preto> recs_preto;
+    int recs_azul;
+    int recs_amarelo;
+    int recs_vermelho;
+    int recs_preto;
 
     CartaPlaneta() {
-        recs_azul = new ArrayList<>();
-        recs_amarelo = new ArrayList<>();
-        recs_vermelho = new ArrayList<>();
-        recs_preto = new ArrayList<>();
         tipo = "P";
     }
 }
 
-class CartaPlanetaPirata extends Carta {
+class CartaPlanetaPirata extends CartaPlaneta {
 
     CartaPlanetaPirata() {
         tipo = "X";
