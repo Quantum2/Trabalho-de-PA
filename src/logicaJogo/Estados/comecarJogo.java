@@ -6,6 +6,8 @@
 
 package logicaJogo.Estados;
 
+import logicaJogo.Jogo;
+
 /**
  *
  * @author a21230528
@@ -18,7 +20,7 @@ public class comecarJogo implements Estado {
      * Do action
      */
     @Override
-    public void doAction() {
+    public void doAction(Jogo jogo) {
         jogo.inicializarMem();
         jogo.setMoedas(num_moedas);
         jogo.imprimirInformacao();

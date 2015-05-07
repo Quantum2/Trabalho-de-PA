@@ -6,6 +6,9 @@
 
 package iu.texto;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.Scanner;
 import logicaJogo.*;
 import logicaJogo.Estados.Estado;
@@ -18,11 +21,30 @@ import logicaJogo.Estados.processaDados;
  * @author a21230528
  */
 public class iniciaJogo {
+    
+    Jogo jogo = new Jogo();
+
+    public  void carregarJogo(){
+        try {
+            FileInputStream fileIn = new FileInputStream("jogo");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            jogo = (Jogo) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+            return;
+        } catch (ClassNotFoundException c) {
+            System.out.println("Class not found");
+            c.printStackTrace();
+            return;
+        }
+    }
 
     /**
      *
      */
-    public static void iuEngine(){
+    public void iuEngine(){
         Contexto con = new Contexto();
         Estado comecarJogo = new comecarJogo();
         Estado esperaEntrada = new esperaEntrada();
@@ -30,27 +52,27 @@ public class iniciaJogo {
         boolean acabar = false;
         
         io t1 = new io("Thread 1");
-        t1.start();
+        t1.start(jogo);
 
         con.setState(comecarJogo);
-        con.doAction();
+        con.doAction(jogo);
         
         do{
             con.setState(esperaEntrada);
             
             do {
-                Estado.jogo.mostrarMenu();
+                jogo.mostrarMenu();
                 Scanner entrada = new Scanner(System.in);
                 int s = entrada.nextInt();
-                Estado.jogo.setComandoSeguinte(new StringBuffer(new Integer(s).toString()));
+                jogo.setComandoSeguinte(new StringBuffer(Integer.toString(s)));
                 
-                con.doAction();
-            } while (Estado.jogo.validezDados != 0);
+                con.doAction(jogo);
+            } while (jogo.validezDados != 0);
             
             UtilsIUTexto.clearConsole();
             
             con.setState(processaDados);
-            con.doAction();
+            con.doAction(jogo);
         } while (acabar != true);
     }
 }

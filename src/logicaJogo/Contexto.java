@@ -25,7 +25,7 @@ public class Contexto implements Estado {
     }
 
     @Override
-    public void doAction() {
-        this.jogoEstado.doAction();
+    public void doAction(Jogo jogo) {
+        this.jogoEstado.doAction(jogo);
     }
 }

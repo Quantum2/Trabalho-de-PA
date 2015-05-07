@@ -6,6 +6,8 @@
 
 package logicaJogo.Estados;
 
+import logicaJogo.Jogo;
+
 /**
  *
  * @author a21230528
@@ -13,7 +15,7 @@ package logicaJogo.Estados;
 public class terminarJogo implements Estado{
 
     @Override
-    public void doAction() {
+    public void doAction(Jogo jogo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

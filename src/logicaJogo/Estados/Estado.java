@@ -12,7 +12,10 @@ import logicaJogo.Jogo;
  * @author a21230528
  */
 public interface Estado{
-    Jogo jogo = new Jogo();
-    
-    public void doAction();
+   
+    /**
+     *
+     * @param jogo
+     */
+    public void doAction(Jogo jogo);
 }

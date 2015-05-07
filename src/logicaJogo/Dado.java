@@ -5,13 +5,14 @@
  */
 package logicaJogo;
 
+import java.io.Serializable;
 import static logicaJogo.Utils.randInt;
 
 /**
  *
  * @author Rafael
  */
-public class Dado {
+public class Dado implements Serializable{
     int random;
     
     Dado(){

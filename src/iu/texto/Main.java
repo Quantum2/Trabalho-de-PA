@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package iu.texto;
-import static iu.texto.iniciaJogo.iuEngine;
         
 /**
  *
@@ -21,12 +20,14 @@ public class Main {
         UtilsIUTexto.clearConsole();
         welcomeMsg.imprimirTextoInicial();
         opcao = welcomeMsg.getOpcao();
+        iniciaJogo motor = new iniciaJogo();
 
         switch (opcao) {
             case 1:
-                iuEngine();
+                motor.iuEngine();
             case 2:
-                break;
+                motor.carregarJogo();
+                motor.iuEngine();
             case 3:
                 break;
             case 4:

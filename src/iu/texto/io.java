@@ -6,7 +6,7 @@
 package iu.texto;
 
 import logicaJogo.Carta;
-import logicaJogo.Estados.Estado;
+import logicaJogo.Jogo;
 import logicaJogo.Mapa;
 import logicaJogo.Nave;
 
@@ -17,8 +17,9 @@ import logicaJogo.Nave;
 public class io implements Runnable {
 
     private Thread t;
-    private String threadName;
+    private final String threadName;
     boolean work = true;
+    Jogo j;
 
     public io(String name) {
         threadName = name;
@@ -29,17 +30,17 @@ public class io implements Runnable {
         System.out.println("Running " + threadName);
         try {
             do{
-                if (Estado.jogo.imprimirCheck == 1) {
-                    System.out.print(Estado.jogo.stringSaida.get(0));
-                    Estado.jogo.stringSaida.remove(0);
-                    if (Estado.jogo.stringSaida.isEmpty()) {
-                        Estado.jogo.imprimirCheck = 0;
+                if (j.imprimirCheck == 1) {
+                    System.out.print(j.stringSaida.get(0));
+                    j.stringSaida.remove(0);
+                    if (j.stringSaida.isEmpty()) {
+                        j.imprimirCheck = 0;
                     }
                 }
 
-                if (Estado.jogo.imprimirMapaCheck == 1) {
-                    Mapa mapa = Estado.jogo.getMap();
-                    Nave nave = Estado.jogo.getJogador();
+                if (j.imprimirMapaCheck == 1) {
+                    Mapa mapa = j.getMap();
+                    Nave nave = j.getJogador();
 
                     Carta map[][] = mapa.getMap();
 
@@ -67,7 +68,7 @@ public class io implements Runnable {
                         }
                         System.out.println();
                     }
-                    Estado.jogo.imprimirMapaCheck = 0;
+                    j.imprimirMapaCheck = 0;
                 }
                 
                 Thread.sleep(50);
@@ -78,9 +79,10 @@ public class io implements Runnable {
         System.out.println("Thread " + threadName + " exiting.");
     }
 
-    public void start() {
+    public void start(Jogo jogo) {
         if (t == null) {
             t = new Thread(this, threadName);
+            j = jogo;
             t.start();
         }
     }

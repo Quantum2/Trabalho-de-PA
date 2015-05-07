@@ -6,11 +6,13 @@
 
 package logicaJogo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author a21230528
  */
-public class Carta {
+public class Carta implements Serializable{
 
     /**
      *Tipo de carta

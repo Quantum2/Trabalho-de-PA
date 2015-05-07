@@ -5,6 +5,7 @@
  */
 package logicaJogo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import static logicaJogo.Utils.randInt;
 
@@ -12,7 +13,7 @@ import static logicaJogo.Utils.randInt;
  *
  * @author Rafael
  */
-public class Mapa {
+public class Mapa implements Serializable{
     Carta map[][] = new Carta[7][9];
     ArrayList<CartaPlaneta> planetas = new ArrayList<>();
     ArrayList<CartaPlanetaPirata> piratas = new ArrayList<>();

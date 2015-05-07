@@ -6,6 +6,8 @@
 
 package logicaJogo.Estados;
 
+import logicaJogo.Jogo;
+
 /**
  *
  * @author a21230528
@@ -13,7 +15,7 @@ package logicaJogo.Estados;
 public class processaDados implements Estado{
 
     @Override
-    public void doAction() {
+    public void doAction(Jogo jogo) {
         int x=0, y=0;
         
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("1")) {

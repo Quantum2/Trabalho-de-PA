@@ -6,6 +6,8 @@
 
 package logicaJogo.Estados;
 
+import logicaJogo.Jogo;
+
 /**
  *
  * @author a21230528
@@ -13,7 +15,7 @@ package logicaJogo.Estados;
 public class esperaEntrada implements Estado{
 
     @Override
-    public void doAction() {
+    public void doAction(Jogo jogo) {
         int retValue;
         retValue = jogo.verificarValidadeComando();
         jogo.validezDados=retValue;

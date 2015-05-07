@@ -5,8 +5,17 @@
  */
 package logicaJogo;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import logicaJogo.Estados.Estado;
 
 /**
  *
@@ -31,6 +40,20 @@ public class Jogo implements Serializable{
 
     public Nave getJogador() {
         return jogador;
+    }
+    
+    public void gravarJogo(){
+        try {
+            FileOutputStream fileOut = new FileOutputStream("jogo");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(this);
+            out.close();
+            fileOut.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Jogo.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Jogo.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     /**
@@ -96,10 +119,6 @@ public class Jogo implements Serializable{
     public void mostrarMenu() {
         stringSaida.add("\n(1) - Cima\n(2) - Baixo\n(3) - Direita\n(4) - Esquerda\n(5) - Informação da carta\n(6) - Gravar jogo\n(7) - Sair\n");
         imprimirCheck = 1;
-    }
-
-    public void gravarJogo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void movimento() {
