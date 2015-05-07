@@ -18,7 +18,7 @@ public class UtilsIUTexto {
             final String os = System.getProperty("os.name");
 
             if (os.contains("Windows")) {
-                //Limpar melhor para futuro
+                //Falta imprimir ecrã de jeito
             } else {
                 Runtime.getRuntime().exec("clear");
             }

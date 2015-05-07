@@ -16,7 +16,9 @@ public class verificacaoDados implements Estado{
 
     @Override
     public void doAction(Jogo jogo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(jogo.getMoedas() <= 0){
+            jogo.perdeuCheck = 1;
+        }
     }
     
 }

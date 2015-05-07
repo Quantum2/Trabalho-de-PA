@@ -31,6 +31,7 @@ public class Jogo implements Serializable{
     public int imprimirCheck = 0;
     public int imprimirMapaCheck = 0;
     public int jogoCarregado = 0;
+    public int perdeuCheck = 0;
 
     public Mapa getMap() {
         return map;
@@ -129,6 +130,7 @@ public class Jogo implements Serializable{
     }
 
     public void infoCarta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        stringSaida.add("\n(1) - Carta acima\n(2) - Carta abaixo\n(3) - Carta à direita\n(4) - Carta à esquerda\n");
+        imprimirCheck = 1;
     }
 }
