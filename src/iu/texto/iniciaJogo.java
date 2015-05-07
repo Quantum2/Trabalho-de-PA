@@ -31,6 +31,7 @@ public class iniciaJogo {
             jogo = (Jogo) in.readObject();
             in.close();
             fileIn.close();
+            jogo.jogoCarregado = 1;
         } catch (IOException i) {
             i.printStackTrace();
             return;

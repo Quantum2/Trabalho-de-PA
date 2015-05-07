@@ -5,17 +5,14 @@
  */
 package logicaJogo;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import logicaJogo.Estados.Estado;
 
 /**
  *
@@ -33,6 +30,7 @@ public class Jogo implements Serializable{
     public int validezDados;
     public int imprimirCheck = 0;
     public int imprimirMapaCheck = 0;
+    public int jogoCarregado = 0;
 
     public Mapa getMap() {
         return map;
