@@ -71,7 +71,7 @@ public class io implements Runnable {
                     j.imprimirMapaCheck = 0;
                 }
                 
-                Thread.sleep(50);
+                Thread.sleep(20);
             }while(work);
         } catch (InterruptedException e) {
             System.out.println("Thread " + threadName + " interrupted.");

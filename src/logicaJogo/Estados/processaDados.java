@@ -6,6 +6,8 @@
 
 package logicaJogo.Estados;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import logicaJogo.Jogo;
 
 /**
@@ -31,7 +33,11 @@ public class processaDados implements Estado{
             x=-1;
         }
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("5")) {
-            jogo.infoCartaTexto();
+            try {
+                jogo.infoCartaTexto();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(processaDados.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("6")) {
             jogo.gravarJogo();

@@ -132,9 +132,12 @@ public class Jogo implements Serializable{
         imprimirCheck = 1;
     }
 
-    public void infoCartaTexto() {
+    public void infoCartaTexto() throws InterruptedException {
         stringSaida.add("\n(1) - Carta acima\n(2) - Carta abaixo\n(3) - Carta à direita\n(4) - Carta à esquerda\n");
-        needsMoreInput = 1;
         imprimirCheck = 1;
+        needsMoreInput = 1;
+        
+        while(needsMoreInput == 1)
+            Thread.sleep(50);
     }
 }

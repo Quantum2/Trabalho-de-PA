@@ -34,10 +34,11 @@ public class input implements Runnable{
                 if (j.needsMoreInput == 1) {
                     Scanner entrada = new Scanner(System.in);
                     int s = entrada.nextInt();
-                    j.setComandoSeguinte(new StringBuffer(Integer.toString(s)));
+                    j.stringEntrada.add(Integer.toString(s));
+                    j.needsMoreInput = 0;
                 }
                 
-                Thread.sleep(50);
+                Thread.sleep(150);
             } catch (InterruptedException ex) {
                 Logger.getLogger(input.class.getName()).log(Level.SEVERE, null, ex);
             }
