@@ -26,12 +26,14 @@ public class Jogo implements Serializable{
     Dado dado;
     StringBuffer comandoSeguinte;
     public ArrayList<String> stringSaida;
+    public ArrayList<String> stringEntrada;
     ArrayList<Carta> cartasExploradas;
     public int validezDados;
     public int imprimirCheck = 0;
     public int imprimirMapaCheck = 0;
     public int jogoCarregado = 0;
     public int perdeuCheck = 0;
+    public int needsMoreInput = 0;
 
     public Mapa getMap() {
         return map;
@@ -95,6 +97,7 @@ public class Jogo implements Serializable{
         dado = new Dado();
         cartasExploradas = new ArrayList<>();
         stringSaida = new ArrayList<>();
+        stringEntrada = new ArrayList<>();
     }
 
     public int verificarValidadeComando() {
@@ -115,7 +118,7 @@ public class Jogo implements Serializable{
         return 1;
     }
 
-    public void mostrarMenu() {
+    public void mostrarMenuTexto() {
         stringSaida.add("\n(1) - Cima\n(2) - Baixo\n(3) - Direita\n(4) - Esquerda\n(5) - Informação da carta\n(6) - Gravar jogo\n(7) - Sair\n");
         imprimirCheck = 1;
     }
@@ -125,12 +128,13 @@ public class Jogo implements Serializable{
     }
 
     public void imprimirInformacao() {
-        stringSaida.add("Moedas : " + moedas);
+        stringSaida.add("Moedas : " + moedas + "\n");
         imprimirCheck = 1;
     }
 
-    public void infoCarta() {
+    public void infoCartaTexto() {
         stringSaida.add("\n(1) - Carta acima\n(2) - Carta abaixo\n(3) - Carta à direita\n(4) - Carta à esquerda\n");
+        needsMoreInput = 1;
         imprimirCheck = 1;
     }
 }

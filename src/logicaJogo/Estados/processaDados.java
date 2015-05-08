@@ -31,7 +31,7 @@ public class processaDados implements Estado{
             x=-1;
         }
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("5")) {
-            jogo.infoCarta();
+            jogo.infoCartaTexto();
         }
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("6")) {
             jogo.gravarJogo();

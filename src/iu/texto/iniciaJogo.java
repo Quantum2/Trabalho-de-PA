@@ -53,7 +53,9 @@ public class iniciaJogo {
         boolean acabar = false;
         
         io t1 = new io("Thread 1");
+        input t2 = new input("Thread 2");
         t1.start(jogo);
+        t2.start(jogo);
 
         con.setState(comecarJogo);
         con.doAction(jogo);
@@ -62,7 +64,7 @@ public class iniciaJogo {
             con.setState(esperaEntrada);
             
             do {
-                jogo.mostrarMenu();
+                jogo.mostrarMenuTexto();
                 Scanner entrada = new Scanner(System.in);
                 int s = entrada.nextInt();
                 jogo.setComandoSeguinte(new StringBuffer(Integer.toString(s)));
