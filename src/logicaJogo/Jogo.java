@@ -195,20 +195,49 @@ public class Jogo implements Serializable{
             }
         }
         
-        opcaoVenda();
+        opcaoVendaCompra();
     }
 
     public void mercado() {
         int perda;
         perda = map.replenishMarket();
         
-        
+        switch(perda){
+            case 1:
+                if (jogador.recs_preto > 0) {
+                    moedas = moedas - (4 * jogador.recs_preto);
+                }
+                break;
+            case 2:
+                ataquePirata();
+                break;
+            default:
+                break;
+        }
     }
 
-    private void opcaoVenda() throws InterruptedException {
+    private void opcaoVendaCompra() throws InterruptedException {
         needsMoreInput = 1;
         while(needsMoreInput == 1){
             Thread.sleep(20);
+        }
+    }
+
+    private void ataquePirata() {
+        int forcaPirata = Integer.parseInt(dado.efectuarLancamento("Normal"));
+        
+        for (int i = 0; i <= 3; i++) {
+            stringSaida.add("ATAQUE PIRATA EM PROGRESSO !!!");
+        }
+        imprimirCheck = 1;
+        
+        if (forcaPirata <= jogador.forcaBatalha) {
+            stringSaida.add("Ataque de piratas derrotado !");
+            imprimirCheck = 1;
+        } else {
+            moedas = moedas - (forcaPirata - jogador.forcaBatalha);
+            stringSaida.add("Os piratas venceram...");
+            imprimirCheck = 1;
         }
     }
 }
