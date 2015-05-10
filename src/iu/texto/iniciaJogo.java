@@ -15,6 +15,7 @@ import logicaJogo.Estados.Estado;
 import logicaJogo.Estados.comecarJogo;
 import logicaJogo.Estados.esperaEntrada;
 import logicaJogo.Estados.processaDados;
+import logicaJogo.Estados.verificacaoDados;
 
 /**
  *
@@ -50,6 +51,7 @@ public class iniciaJogo {
         Estado comecarJogo = new comecarJogo();
         Estado esperaEntrada = new esperaEntrada();
         Estado processaDados = new processaDados();
+        Estado verificacaoDados = new verificacaoDados();
         boolean acabar = false;
         
         io t1 = new io("Thread 1");
@@ -75,6 +77,9 @@ public class iniciaJogo {
             UtilsIUTexto.clearConsole();
             
             con.setState(processaDados);
+            con.doAction(jogo);
+            
+            con.setState(verificacaoDados);
             con.doAction(jogo);
         } while (acabar != true);
     }

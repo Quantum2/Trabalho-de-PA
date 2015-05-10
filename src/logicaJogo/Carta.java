@@ -37,7 +37,7 @@ class CartaEspaçoVazio extends Carta {
 
 class CartaPlaneta extends Carta {
 
-    String nome;
+    public String nome;
     int recs_azul;
     int recs_amarelo;
     int recs_vermelho;

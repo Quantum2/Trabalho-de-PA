@@ -14,7 +14,7 @@ import logicaJogo.Jogo;
  */
 public class comecarJogo implements Estado {
     
-    public static final int num_moedas = 30;
+    public static final int num_moedas = 10;
     
     /**
      * Do action

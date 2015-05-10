@@ -133,8 +133,38 @@ public class Jogo implements Serializable{
     }
 
     public void infoCartaTexto() throws InterruptedException {
-        stringSaida.add("\n(1) - Carta acima\n(2) - Carta abaixo\n(3) - Carta à direita\n(4) - Carta à esquerda\n");
-        imprimirCheck = 1;
+        int recsAzul, recsVermelho, recsAmarelo, recsBranco, recsPreto;
+        int pos_x = jogador.pos_x;
+        int pos_y = jogador.pos_y;
+        
+        if("P".equals(map.map[pos_x][pos_y].tipo) || "X".equals(map.map[pos_x][pos_y].tipo) || pos_x - 1 >= 0 || pos_y - 1 >= 0){
+            stringSaida.add("Posição actual:\n");
+            stringSaida.add(String.format("%s\n", map.devolverInfo(6 - pos_x, pos_y).get(0)));
+            stringSaida.add(String.format("Recursos amarelos: %s\n", map.devolverInfo(6 - pos_x, pos_y).get(1)));
+            stringSaida.add(String.format("Recursos azuis :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(2)));
+            stringSaida.add(String.format("Recursos vermelho :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(3)));
+            stringSaida.add(String.format("Recursos preto :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(4)));
+            imprimirCheck = 1;
+        }
+        if("P".equals(map.map[pos_x + 1][pos_y].tipo) || "X".equals(map.map[pos_x + 1][pos_y].tipo) || pos_x - 1 >= 0 || pos_y - 1 >= 0){
+            stringSaida.add("Posição abaixo:\n");
+            stringSaida.add(String.format("%s\n", map.devolverInfo(6 - pos_x, pos_y).get(0)));
+            stringSaida.add(String.format("Recursos amarelos: %s\n", map.devolverInfo(6 - pos_x, pos_y).get(1)));
+            stringSaida.add(String.format("Recursos azuis :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(2)));
+            stringSaida.add(String.format("Recursos vermelho :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(3)));
+            stringSaida.add(String.format("Recursos preto :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(4)));
+            imprimirCheck = 1;
+        }
+        if("P".equals(map.map[pos_x][pos_y + 1].tipo) || "X".equals(map.map[pos_x][pos_y + 1].tipo) || pos_x - 1 >= 0 || pos_y - 1 >= 0){
+            
+        }
+        if("P".equals(map.map[pos_x - 1][pos_y].tipo) || "X".equals(map.map[pos_x - 1][pos_y].tipo) || pos_x - 1 >= 0 || pos_y - 1 >= 0){
+            
+        }
+        if("P".equals(map.map[pos_x][pos_y - 1].tipo) || "X".equals(map.map[pos_x][pos_y - 1].tipo) || pos_x - 1 >= 0 || pos_y - 1 >= 0){
+            
+        }
+        
         needsMoreInput = 1;
         
         while(needsMoreInput == 1)

@@ -34,6 +34,32 @@ public class Mapa implements Serializable{
     public Carta[][] getMap() {
         return map;
     }
+    
+    public ArrayList<String> devolverInfo(int x, int y){
+        ArrayList<String> info = new ArrayList<>();
+        
+        if("P".equals(map[x][y].tipo)){
+            CartaPlaneta temp;
+            temp = (CartaPlaneta) map[x][y];
+            info.add(temp.nome);
+            info.add(Integer.toString(temp.recs_amarelo));
+            info.add(Integer.toString(temp.recs_azul));
+            info.add(Integer.toString(temp.recs_vermelho));
+            info.add(Integer.toString(temp.recs_preto));
+        }
+        
+        if("X".equals(map[x][y].tipo)){
+            CartaPlanetaPirata temp;
+            temp = (CartaPlanetaPirata) map[x][y];
+            info.add(temp.nome);
+            info.add(Integer.toString(temp.recs_amarelo));
+            info.add(Integer.toString(temp.recs_azul));
+            info.add(Integer.toString(temp.recs_vermelho));
+            info.add(Integer.toString(temp.recs_preto));
+        }
+        
+        return info;
+    }
 
     private void preencherAcaso() {
         Carta c;

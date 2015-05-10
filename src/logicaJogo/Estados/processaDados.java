@@ -47,7 +47,6 @@ public class processaDados implements Estado{
         }
             
         jogo.mudarPosicaoNave(x, y);
-        jogo.movimento();
         jogo.imprimirInformacao();
         jogo.imprimirMapa();
     }
