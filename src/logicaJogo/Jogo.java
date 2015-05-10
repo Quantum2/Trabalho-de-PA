@@ -100,7 +100,7 @@ public class Jogo implements Serializable{
         stringEntrada = new ArrayList<>();
     }
 
-    public int verificarValidadeComando() {
+    public int verificarValidadeComando(){
         if(comandoSeguinte.toString().equalsIgnoreCase("1"))
             return 0;
         if(comandoSeguinte.toString().equalsIgnoreCase("2"))
@@ -109,10 +109,16 @@ public class Jogo implements Serializable{
             return 0;
         if(comandoSeguinte.toString().equalsIgnoreCase("4"))
             return 0;
-        if(comandoSeguinte.toString().equalsIgnoreCase("5"))
-            return 2;
+        if (comandoSeguinte.toString().equalsIgnoreCase("5")) {
+            try {
+                infoCartaTexto();
+                opcaoVendaCompra();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Jogo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         if(comandoSeguinte.toString().equalsIgnoreCase("6"))
-            return 1;
+            return 0;
         if(comandoSeguinte.toString().equalsIgnoreCase("7"))
             return 0;
         return 1;
@@ -194,6 +200,7 @@ public class Jogo implements Serializable{
                 imprimirCheck = 1;
             }
         }
+        needsMoreInput = 1;
     }
 
     public void mercado() {
@@ -265,7 +272,10 @@ public class Jogo implements Serializable{
                 }
                 break;
             case "6":
-                
+                if(jogador.capCarga < 3){
+                    jogador.capCarga++;
+                    moedas = moedas - jogador.capCarga;
+                }
                 break;
             default:
                 break;

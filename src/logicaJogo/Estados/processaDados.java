@@ -34,23 +34,16 @@ public class processaDados implements Estado{
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("2")) {
             x=-1;
         }
-        if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("5")) {
-            try {
-                jogo.infoCartaTexto();
-                jogo.opcaoVendaCompra();
-            } catch (InterruptedException ex) {
-                Logger.getLogger(processaDados.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("6")) {
+            jogo.imprimirCheck = 0;
             jogo.gravarJogo();
+            System.exit(0);
         }
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("7")) {
             System.exit(0);
         }
             
         jogo.mudarPosicaoNave(x, y);
-        
     }
     
 }
