@@ -18,7 +18,9 @@ public class UtilsIUTexto {
             final String os = System.getProperty("os.name");
 
             if (os.contains("Windows")) {
-                
+                for(int i=0;i<100;i++){
+                    System.out.println("\n");
+                }
             } else {
                 Runtime.getRuntime().exec("clear");
             }
