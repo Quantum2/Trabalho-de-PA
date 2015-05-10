@@ -17,6 +17,7 @@ public class verificacaoDados implements Estado{
     @Override
     public void doAction(Jogo jogo) {
         jogo.movimento();
+        jogo.verificarWormhole();
         
         if(jogo.getMoedas() <= 0){
             jogo.perdeuCheck = 1;

@@ -297,4 +297,22 @@ public class Jogo implements Serializable{
             imprimirCheck = 1;
         }
     }
+
+    public void verificarWormhole() {
+        int pos_x = jogador.pos_x;
+        int pos_y = jogador.pos_y;
+
+        if ("W".equals(map.getMap()[pos_x][pos_y].tipo)) {
+            for (int i = 0; i < 7; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if ("W".equals(map.getMap()[i][j].tipo) && i != pos_x) {
+                        if (j != pos_y) {
+                            jogador.pos_x = i;
+                            jogador.pos_y = j;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
