@@ -72,9 +72,8 @@ public class iniciaJogo {
                 jogo.setComandoSeguinte(new StringBuffer(Integer.toString(s)));
                 
                 con.doAction(jogo);
+                UtilsIUTexto.clearConsole();
             } while (jogo.validezDados != 0);
-            
-            UtilsIUTexto.clearConsole();
             
             con.setState(processaDados);
             con.doAction(jogo);

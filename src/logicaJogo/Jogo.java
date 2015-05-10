@@ -110,7 +110,7 @@ public class Jogo implements Serializable{
         if(comandoSeguinte.toString().equalsIgnoreCase("4"))
             return 0;
         if(comandoSeguinte.toString().equalsIgnoreCase("5"))
-            return 0;
+            return 2;
         if(comandoSeguinte.toString().equalsIgnoreCase("6"))
             return 0;
         if(comandoSeguinte.toString().equalsIgnoreCase("7"))
@@ -200,6 +200,7 @@ public class Jogo implements Serializable{
 
     public void mercado() {
         int perda;
+        String resultado;
         perda = map.replenishMarket();
         
         switch(perda){
@@ -214,29 +215,64 @@ public class Jogo implements Serializable{
             default:
                 break;
         }
+        
+        if(jogador.recs_preto != 0){
+            for (int i = 0; i < 2; i++) {
+                resultado = dado.efectuarLancamento("Colorido");
+
+                switch (resultado) {
+                    case "branco":
+                        moedas = moedas - (4 * jogador.recs_preto);
+                        break;
+                    case "preto":
+                        ataquePirata();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 
     private void opcaoVendaCompra() throws InterruptedException {
+        int pos_x = jogador.pos_x;
+        int pos_y = jogador.pos_y;
+        
+        stringSaida.add("\n(1) - Comprar vermelho\n(2) - Comprar amarelo\n(3) - Comprar azul\n(4) - Comprar ilegal\n(5) - Comprar upgrade para nave\n");
+        imprimirCheck = 1;
+        
         needsMoreInput = 1;
         while(needsMoreInput == 1){
             Thread.sleep(20);
+        }
+        
+        switch(stringEntrada.get(0)){
+            case "1":
+                
+                break;
+            case "2":
+                
+                break;
+            case "3":
+                
+                break;
+            default:
+                break;
         }
     }
 
     private void ataquePirata() {
         int forcaPirata = Integer.parseInt(dado.efectuarLancamento("Normal"));
         
-        for (int i = 0; i <= 3; i++) {
-            stringSaida.add("ATAQUE PIRATA EM PROGRESSO !!!");
-        }
+        stringSaida.add("ATAQUE PIRATA EM PROGRESSO !!!\n");
         imprimirCheck = 1;
         
         if (forcaPirata <= jogador.forcaBatalha) {
-            stringSaida.add("Ataque de piratas derrotado !");
+            stringSaida.add("Ataque de piratas derrotado !\n");
             imprimirCheck = 1;
         } else {
             moedas = moedas - (forcaPirata - jogador.forcaBatalha);
-            stringSaida.add("Os piratas venceram...");
+            stringSaida.add("Os piratas venceram...\n");
             imprimirCheck = 1;
         }
     }
