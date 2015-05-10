@@ -18,7 +18,7 @@ public class Mapa implements Serializable{
     ArrayList<CartaPlaneta> planetas = new ArrayList<>();
     ArrayList<CartaPlanetaPirata> piratas = new ArrayList<>();
     String coords[];
-    Dado dado;
+    Dado dado = new Dado();
     
     public static final int num_wormholes = 2;
     public static final int num_vazios = 12;
@@ -265,34 +265,40 @@ public class Mapa implements Serializable{
                     CartaPlanetaPirata temp = new CartaPlanetaPirata();
                     temp = (CartaPlanetaPirata) map[i][j];
                     
-                    temp.disp.clear();
-                    temp.disp.add("preto");
-                    map[i][j] = temp;
+                    if (temp.disp.size() < 1) {
+                        temp.disp.clear();
+                        temp.disp.add("preto");
+                        map[i][j] = temp;
+                    }
                 }
                 
                 if("P".equals(map[i][j].tipo)){
                     CartaPlaneta temp = new CartaPlaneta();
                     temp = (CartaPlaneta) map[i][j];
-                    
-                    temp.disp.clear();
-                    resultado = dado.efectuarLancamento("Colorido");
-                    
-                    if(null != resultado)switch (resultado) {
-                        case "branco":
-                            retValue = 1;
-                            break;
-                        case "preto":
-                            retValue = 2;
-                            break;
-                        case "vermelho":
-                            temp.disp.add("vermelho");
-                            break;
-                        case "amarelo":
-                            temp.disp.add("amarelo");
-                            break;
-                        case "azul":
-                            temp.disp.add("azul");
-                            break;
+                 
+                    if (temp.disp.size() < 2) {
+                        temp.disp.clear();
+                        resultado = dado.efectuarLancamento("Colorido");
+
+                        if (null != resultado) {
+                            switch (resultado) {
+                                case "branco":
+                                    retValue = 1;
+                                    break;
+                                case "preto":
+                                    retValue = 2;
+                                    break;
+                                case "vermelho":
+                                    temp.disp.add("vermelho");
+                                    break;
+                                case "amarelo":
+                                    temp.disp.add("amarelo");
+                                    break;
+                                case "azul":
+                                    temp.disp.add("azul");
+                                    break;
+                            }
+                        }
                     }
                 }
             }

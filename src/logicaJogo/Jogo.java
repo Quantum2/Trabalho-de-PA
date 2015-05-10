@@ -138,7 +138,7 @@ public class Jogo implements Serializable{
         int pos_y = jogador.pos_y;
         
         if("P".equals(map.map[pos_x][pos_y].tipo) || "X".equals(map.map[pos_x][pos_y].tipo)){
-            stringSaida.add("Posição actual:\n");
+            stringSaida.add("\nPosição actual:\n");
             stringSaida.add(String.format("%s\n", map.devolverInfo(6 - pos_x, pos_y).get(0)));
             stringSaida.add(String.format("Recursos amarelos: %s\n", map.devolverInfo(6 - pos_x, pos_y).get(1)));
             stringSaida.add(String.format("Recursos azuis :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(2)));
@@ -194,6 +194,8 @@ public class Jogo implements Serializable{
                 imprimirCheck = 1;
             }
         }
+        
+        opcaoVenda();
     }
 
     public void mercado() {
@@ -201,5 +203,12 @@ public class Jogo implements Serializable{
         perda = map.replenishMarket();
         
         
+    }
+
+    private void opcaoVenda() throws InterruptedException {
+        needsMoreInput = 1;
+        while(needsMoreInput == 1){
+            Thread.sleep(20);
+        }
     }
 }
