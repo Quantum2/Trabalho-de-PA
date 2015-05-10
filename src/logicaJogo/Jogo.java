@@ -137,7 +137,7 @@ public class Jogo implements Serializable{
         int pos_x = jogador.pos_x;
         int pos_y = jogador.pos_y;
         
-        if("P".equals(map.map[pos_x][pos_y].tipo) || "X".equals(map.map[pos_x][pos_y].tipo) || pos_x - 1 >= 0 || pos_y - 1 >= 0){
+        if("P".equals(map.map[pos_x][pos_y].tipo) || "X".equals(map.map[pos_x][pos_y].tipo)){
             stringSaida.add("Posição actual:\n");
             stringSaida.add(String.format("%s\n", map.devolverInfo(6 - pos_x, pos_y).get(0)));
             stringSaida.add(String.format("Recursos amarelos: %s\n", map.devolverInfo(6 - pos_x, pos_y).get(1)));
@@ -146,27 +146,50 @@ public class Jogo implements Serializable{
             stringSaida.add(String.format("Recursos preto :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(4)));
             imprimirCheck = 1;
         }
-        if("P".equals(map.map[pos_x + 1][pos_y].tipo) || "X".equals(map.map[pos_x + 1][pos_y].tipo) || pos_x - 1 >= 0 || pos_y - 1 >= 0){
-            stringSaida.add("Posição abaixo:\n");
-            stringSaida.add(String.format("%s\n", map.devolverInfo(6 - pos_x, pos_y).get(0)));
-            stringSaida.add(String.format("Recursos amarelos: %s\n", map.devolverInfo(6 - pos_x, pos_y).get(1)));
-            stringSaida.add(String.format("Recursos azuis :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(2)));
-            stringSaida.add(String.format("Recursos vermelho :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(3)));
-            stringSaida.add(String.format("Recursos preto :%s\n", map.devolverInfo(6 - pos_x, pos_y).get(4)));
-            imprimirCheck = 1;
+        
+        if (pos_x + 1 < 7) {
+            if ("P".equals(map.map[pos_x + 1][pos_y].tipo) || "X".equals(map.map[pos_x + 1][pos_y].tipo)) {
+                stringSaida.add("\nPosição abaixo:\n");
+                stringSaida.add(String.format("%s\n", map.devolverInfo(6 - pos_x + 1, pos_y).get(0)));
+                stringSaida.add(String.format("Recursos amarelos: %s\n", map.devolverInfo(6 - pos_x + 1, pos_y).get(1)));
+                stringSaida.add(String.format("Recursos azuis :%s\n", map.devolverInfo(6 - pos_x + 1, pos_y).get(2)));
+                stringSaida.add(String.format("Recursos vermelho :%s\n", map.devolverInfo(6 - pos_x + 1, pos_y).get(3)));
+                stringSaida.add(String.format("Recursos preto :%s\n", map.devolverInfo(6 - pos_x + 1, pos_y).get(4)));
+                imprimirCheck = 1;
+            }
         }
-        if("P".equals(map.map[pos_x][pos_y + 1].tipo) || "X".equals(map.map[pos_x][pos_y + 1].tipo) || pos_x - 1 >= 0 || pos_y - 1 >= 0){
-            
+        
+        if (pos_y + 1 < 9) {
+            if ("P".equals(map.map[pos_x][pos_y + 1].tipo) || "X".equals(map.map[pos_x][pos_y + 1].tipo)) {
+                stringSaida.add("\nPosição à direita:\n");
+                stringSaida.add(String.format("%s\n", map.devolverInfo(6 - pos_x, pos_y + 1).get(0)));
+                stringSaida.add(String.format("Recursos amarelos: %s\n", map.devolverInfo(6 - pos_x, pos_y + 1).get(1)));
+                stringSaida.add(String.format("Recursos azuis :%s\n", map.devolverInfo(6 - pos_x, pos_y + 1).get(2)));
+                stringSaida.add(String.format("Recursos vermelho :%s\n", map.devolverInfo(6 - pos_x, pos_y + 1).get(3)));
+                stringSaida.add(String.format("Recursos preto :%s\n", map.devolverInfo(6 - pos_x, pos_y + 1).get(4)));
+                imprimirCheck = 1;
+            }
         }
-        if("P".equals(map.map[pos_x - 1][pos_y].tipo) || "X".equals(map.map[pos_x - 1][pos_y].tipo) || pos_x - 1 >= 0 || pos_y - 1 >= 0){
-            
+        
+        if (pos_x - 1 >= 0) {
+            if ("P".equals(map.map[pos_x - 1][pos_y].tipo) || "X".equals(map.map[pos_x - 1][pos_y].tipo)) {
+                stringSaida.add("\nPosição acima:\n");
+                stringSaida.add(String.format("%s\n", map.devolverInfo(6 - pos_x - 1, pos_y).get(0)));
+                stringSaida.add(String.format("Recursos amarelos: %s\n", map.devolverInfo(6 - pos_x - 1, pos_y).get(1)));
+                stringSaida.add(String.format("Recursos azuis :%s\n", map.devolverInfo(6 - pos_x - 1, pos_y).get(2)));
+                stringSaida.add(String.format("Recursos vermelho :%s\n", map.devolverInfo(6 - pos_x - 1, pos_y).get(3)));
+                stringSaida.add(String.format("Recursos preto :%s\n", map.devolverInfo(6 - pos_x - 1, pos_y).get(4)));
+                imprimirCheck = 1;
+            }
         }
-        if("P".equals(map.map[pos_x][pos_y - 1].tipo) || "X".equals(map.map[pos_x][pos_y - 1].tipo) || pos_x - 1 >= 0 || pos_y - 1 >= 0){
-            
+        
+        if (pos_y - 1 >= 0) {
+            if ("P".equals(map.map[pos_x][pos_y - 1].tipo) || "X".equals(map.map[pos_x][pos_y - 1].tipo)) {
+
+            }
         }
         
         needsMoreInput = 1;
-        
         while(needsMoreInput == 1)
             Thread.sleep(50);
     }
