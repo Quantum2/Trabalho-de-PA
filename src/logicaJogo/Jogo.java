@@ -112,7 +112,7 @@ public class Jogo implements Serializable{
         if(comandoSeguinte.toString().equalsIgnoreCase("5"))
             return 2;
         if(comandoSeguinte.toString().equalsIgnoreCase("6"))
-            return 0;
+            return 1;
         if(comandoSeguinte.toString().equalsIgnoreCase("7"))
             return 0;
         return 1;
@@ -194,8 +194,6 @@ public class Jogo implements Serializable{
                 imprimirCheck = 1;
             }
         }
-        
-        opcaoVendaCompra();
     }
 
     public void mercado() {
@@ -234,11 +232,11 @@ public class Jogo implements Serializable{
         }
     }
 
-    private void opcaoVendaCompra() throws InterruptedException {
+    public void opcaoVendaCompra() throws InterruptedException {
         int pos_x = jogador.pos_x;
         int pos_y = jogador.pos_y;
         
-        stringSaida.add("\n(1) - Comprar vermelho\n(2) - Comprar amarelo\n(3) - Comprar azul\n(4) - Comprar ilegal\n(5) - Comprar upgrade para nave\n");
+        stringSaida.add("\n(1) - Comprar vermelho\n(2) - Comprar amarelo\n(3) - Comprar azul\n(4) - Comprar ilegal\n(5) - Comprar upgrade para nave - ataque\n(6) - Comprar upgrade para nave - defesa\n");
         imprimirCheck = 1;
         
         needsMoreInput = 1;
@@ -254,6 +252,19 @@ public class Jogo implements Serializable{
                 
                 break;
             case "3":
+                
+                break;
+            case "5":
+                if(jogador.forcaBatalha == 3){
+                    jogador.forcaBatalha = 4;
+                    moedas = moedas - 4;
+                }
+                if(jogador.forcaBatalha == 4){
+                    jogador.forcaBatalha = 5;
+                    moedas = moedas - 5;
+                }
+                break;
+            case "6":
                 
                 break;
             default:

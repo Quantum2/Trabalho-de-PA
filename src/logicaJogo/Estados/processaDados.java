@@ -37,6 +37,7 @@ public class processaDados implements Estado{
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("5")) {
             try {
                 jogo.infoCartaTexto();
+                jogo.opcaoVendaCompra();
             } catch (InterruptedException ex) {
                 Logger.getLogger(processaDados.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -49,8 +50,7 @@ public class processaDados implements Estado{
         }
             
         jogo.mudarPosicaoNave(x, y);
-        jogo.imprimirInformacao();
-        jogo.imprimirMapa();
+        
     }
     
 }
