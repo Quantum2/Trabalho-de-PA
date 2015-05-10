@@ -7,6 +7,7 @@
 package logicaJogo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -42,9 +43,11 @@ class CartaPlaneta extends Carta {
     int recs_amarelo;
     int recs_vermelho;
     int recs_preto;
+    ArrayList<String> disp;
 
     CartaPlaneta() {
         tipo = "P";
+        disp = new ArrayList<>();
     }
 }
 

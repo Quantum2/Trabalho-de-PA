@@ -14,6 +14,10 @@ import java.io.Serializable;
 public class Nave implements Serializable{
     int pos_x, pos_y;
     int pos_x_ant, pos_y_ant;
+    public int recs_azul;
+    public int recs_amarelo;
+    public int recs_vermelho;
+    public int recs_preto;
 
     Nave() {
         pos_x = 0;

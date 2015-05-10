@@ -13,7 +13,7 @@ import static logicaJogo.Utils.randInt;
  * @author Rafael
  */
 public class Dado implements Serializable{
-    int random;
+    private int random;
     
     Dado(){
         

@@ -185,12 +185,21 @@ public class Jogo implements Serializable{
         
         if (pos_y - 1 >= 0) {
             if ("P".equals(map.map[pos_x][pos_y - 1].tipo) || "X".equals(map.map[pos_x][pos_y - 1].tipo)) {
-
+                stringSaida.add("\nPosição à esquerda:\n");
+                stringSaida.add(String.format("%s\n", map.devolverInfo(6 - pos_x, pos_y - 1).get(0)));
+                stringSaida.add(String.format("Recursos amarelos: %s\n", map.devolverInfo(6 - pos_x, pos_y - 1).get(1)));
+                stringSaida.add(String.format("Recursos azuis :%s\n", map.devolverInfo(6 - pos_x, pos_y - 1).get(2)));
+                stringSaida.add(String.format("Recursos vermelho :%s\n", map.devolverInfo(6 - pos_x, pos_y - 1).get(3)));
+                stringSaida.add(String.format("Recursos preto :%s\n", map.devolverInfo(6 - pos_x, pos_y - 1).get(4)));
+                imprimirCheck = 1;
             }
         }
+    }
+
+    public void mercado() {
+        int perda;
+        perda = map.replenishMarket();
         
-        needsMoreInput = 1;
-        while(needsMoreInput == 1)
-            Thread.sleep(50);
+        
     }
 }

@@ -18,6 +18,7 @@ public class Mapa implements Serializable{
     ArrayList<CartaPlaneta> planetas = new ArrayList<>();
     ArrayList<CartaPlanetaPirata> piratas = new ArrayList<>();
     String coords[];
+    Dado dado;
     
     public static final int num_wormholes = 2;
     public static final int num_vazios = 12;
@@ -252,5 +253,50 @@ public class Mapa implements Serializable{
             }
             piratas.add(tempPirata);
         }
+    }
+
+    int replenishMarket() {
+        String resultado;
+        int retValue = 0;
+        
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 9; j++) {
+                if("X".equals(map[i][j].tipo)){
+                    CartaPlanetaPirata temp = new CartaPlanetaPirata();
+                    temp = (CartaPlanetaPirata) map[i][j];
+                    
+                    temp.disp.clear();
+                    temp.disp.add("preto");
+                    map[i][j] = temp;
+                }
+                
+                if("P".equals(map[i][j].tipo)){
+                    CartaPlaneta temp = new CartaPlaneta();
+                    temp = (CartaPlaneta) map[i][j];
+                    
+                    temp.disp.clear();
+                    resultado = dado.efectuarLancamento("Colorido");
+                    
+                    if(null != resultado)switch (resultado) {
+                        case "branco":
+                            retValue = 1;
+                            break;
+                        case "preto":
+                            retValue = 2;
+                            break;
+                        case "vermelho":
+                            temp.disp.add("vermelho");
+                            break;
+                        case "amarelo":
+                            temp.disp.add("amarelo");
+                            break;
+                        case "azul":
+                            temp.disp.add("azul");
+                            break;
+                    }
+                }
+            }
+        }
+        return retValue;
     }
 }

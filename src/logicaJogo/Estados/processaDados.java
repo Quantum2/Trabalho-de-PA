@@ -35,6 +35,7 @@ public class processaDados implements Estado{
         if(jogo.getComandoSeguinte().toString().equalsIgnoreCase("5")) {
             try {
                 jogo.infoCartaTexto();
+                jogo.mercado();
             } catch (InterruptedException ex) {
                 Logger.getLogger(processaDados.class.getName()).log(Level.SEVERE, null, ex);
             }
